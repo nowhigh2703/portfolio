@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ima12332 — Portfolio | 薬剤師 × 中小企業診断士 × AI開発</title>
+<meta name="description" content="薬剤師 × 中小企業診断士 × AI開発者 Ima12332 のポートフォリオ。Claude Code を中心とした Vibe Coding で、AI学習ツール・ゲーム・ランディングページ・ビジュアル教材まで多様な作品を制作。">
+<meta name="author" content="Ima12332">
+<meta name="theme-color" content="#1e3a5f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ima12332 — Portfolio">
+<meta property="og:description" content="薬剤師 × 中小企業診断士 × AI開発者のポートフォリオ。現場で得た知をAIで形にする。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e3a5f'/%3E%3Ctext x='50' y='62' font-family='serif' font-size='52' font-weight='700' text-anchor='middle' fill='%23b8956a'%3EI%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fafaf7;
+    --bg-alt:#ffffff;
+    --bg-warm:#f4f0e8;
+    --ink:#1a1a1a;
+    --ink-2:#3a3a3a;
+    --ink-mute:#7a7a78;
+    --navy:#1e3a5f;
+    --navy-dark:#142a47;
+    --amber:#b8956a;
+    --amber-soft:#e8dcc7;
+    --line:#d8d4c8;
+    --line-soft:#ebe7da;
+    --serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+    --sans:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+    --en-serif:"Cormorant Garamond","Noto Serif JP",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--bg);
+    color:var(--ink);
+    font-size:15px;line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+    font-feature-settings:"palt";
+  }
+  .container{max-width:1160px;margin:0 auto;padding:0 40px;}
+  .container-narrow{max-width:780px;margin:0 auto;padding:0 40px;}
+
+  /* English label */
+  .en{
+    font-family:var(--en-serif);font-style:italic;
+    font-weight:400;letter-spacing:.02em;
+  }
+
+  /* Section number */
+  .sec-num{
+    font-family:var(--en-serif);font-style:italic;
+    color:var(--amber);font-size:14px;letter-spacing:.15em;
+    margin-bottom:8px;display:block;
+  }
+
+  /* Rules */
+  .rule{
+    width:100%;height:1px;background:var(--line);
+    border:0;margin:0;
+  }
+  .rule-short{
+    width:48px;height:2px;background:var(--navy);
+    border:0;margin:0 0 24px;
+  }
+
+  /* ===== Top bar ===== */
+  .topbar{
+    background:var(--bg-alt);
+    border-bottom:1px solid var(--line-soft);
+    font-size:12px;color:var(--ink-mute);
+    padding:8px 0;letter-spacing:.05em;
+  }
+  .topbar .container{
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .topbar .issue{font-family:var(--en-serif);font-style:italic;}
+
+  /* ===== Nav ===== */
+  nav{
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+  }
+  nav .container{
+    display:flex;justify-content:space-between;align-items:center;
+    height:80px;
+  }
+  nav .brand{
+    font-family:var(--serif);font-weight:700;
+    font-size:22px;letter-spacing:.05em;
+    color:var(--ink);
+  }
+  nav .brand .en{
+    display:block;font-size:11px;font-style:italic;
+    color:var(--amber);letter-spacing:.2em;margin-bottom:2px;
+    font-weight:400;
+  }
+  nav ul{display:flex;gap:36px;list-style:none;}
+  nav ul a{
+    color:var(--ink-2);text-decoration:none;
+    font-size:13px;letter-spacing:.1em;
+    font-weight:500;font-family:var(--sans);
+    padding:4px 0;position:relative;
+    transition:color .2s;
+  }
+  nav ul a::after{
+    content:"";position:absolute;left:0;right:0;bottom:-2px;
+    height:1px;background:var(--navy);
+    transform:scaleX(0);transform-origin:center;
+    transition:transform .3s ease;
+  }
+  nav ul a:hover{color:var(--navy);}
+  nav ul a:hover::after{transform:scaleX(1);}
+
+  /* ===== Hero ===== */
+  .hero{padding:96px 0 80px;background:var(--bg);}
+  .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;}
+  .hero .meta{
+    font-family:var(--en-serif);font-style:italic;
+    color:var(--amber);font-size:13px;letter-spacing:.2em;
+    margin-bottom:20px;
+  }
+  .hero h1{
+    font-family:var(--serif);font-weight:700;
+    font-size:clamp(36px,4.5vw,52px);
+    line-height:1.4;letter-spacing:.04em;
+    margin-bottom:32px;color:var(--ink);
+  }
+  .hero h1 .navy{color:var(--navy);}
+  .hero .lead{
+    color:var(--ink-2);font-size:15px;line-height:2;
+    border-left:2px solid var(--navy);padding-left:20px;
+    margin-bottom:32px;
+  }
+  .hero .byline{
+    font-size:12px;color:var(--ink-mute);letter-spacing:.1em;
+    padding-top:24px;border-top:1px solid var(--line);
+  }
+  .hero .byline strong{color:var(--ink);font-weight:500;}
+
+  .hero-right{position:relative;}
+  .hero-card{
+    background:var(--bg-alt);
+    border:1px solid var(--line);
+    padding:32px;
+  }
+  .hero-card .ctitle{
+    font-family:var(--en-serif);font-style:italic;
+    color:var(--amber);font-size:13px;letter-spacing:.2em;
+    margin-bottom:16px;
+  }
+  .hero-card h3{
+    font-family:var(--serif);font-weight:700;
+    font-size:18px;line-height:1.7;letter-spacing:.05em;
+    margin-bottom:20px;
+  }
+  .hero-card ul{list-style:none;font-size:13px;line-height:2;color:var(--ink-2);}
+  .hero-card ul li{
+    padding-left:20px;position:relative;
+  }
+  .hero-card ul li::before{
+    content:"—";position:absolute;left:0;color:var(--amber);
+  }
+
+  /* ===== Section base ===== */
+  section{padding:96px 0;}
+  .sec-head{margin-bottom:64px;}
+  .sec-head .label{
+    font-family:var(--en-serif);font-style:italic;
+    color:var(--amber);font-size:14px;letter-spacing:.2em;
+    display:block;margin-bottom:8px;
+  }
+  .sec-head h2{
+    font-family:var(--serif);font-weight:700;
+    font-size:28px;line-height:1.5;letter-spacing:.08em;
+    color:var(--ink);margin-bottom:20px;
+  }
+  .sec-head .sub{
+    color:var(--ink-mute);font-size:13px;letter-spacing:.05em;
+  }
+
+  /* ===== About ===== */
+  .about{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .about .grid{display:grid;grid-template-columns:280px 1fr;gap:64px;}
+  .about .side{
+    border-right:1px solid var(--line);padding-right:32px;
+  }
+  .about .side .num{
+    font-family:var(--en-serif);font-style:italic;
+    color:var(--amber);font-size:14px;letter-spacing:.2em;
+    margin-bottom:8px;
+  }
+  .about .side h2{
+    font-family:var(--serif);font-weight:700;
+    font-size:24px;letter-spacing:.08em;line-height:1.5;
+  }
+  .about .body p{
+    color:var(--ink-2);font-size:15px;line-height:2.1;
+    margin-bottom:20px;
+  }
+  .about .body p:first-letter{
+    font-family:var(--serif);font-weight:700;
+    font-size:1.4em;color:var(--navy);
+  }
+  .about .body .pull{
+    font-family:var(--serif);font-style:normal;
+    font-weight:500;font-size:17px;line-height:1.9;
+    color:var(--navy);letter-spacing:.05em;
+    padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    margin:32px 0;
+  }
+
+  /* ===== Works ===== */
+  .works-section{background:var(--bg);}
+  .filters{
+    display:flex;flex-wrap:wrap;gap:0;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    margin-bottom:48px;
+  }
+  .filter-btn{
+    background:transparent;color:var(--ink-mute);
+    border:0;border-right:1px solid var(--line-soft);
+    padding:14px 28px;font-size:12px;font-weight:500;
+    letter-spacing:.1em;cursor:pointer;
+    font-family:var(--sans);
+    transition:all .2s;
+  }
+  .filter-btn:last-child{border-right:0;}
+  .filter-btn:hover{color:var(--navy);background:var(--bg-warm);}
+  .filter-btn.active{color:var(--ink-2);background:var(--bg-warm);font-weight:700;}
+  .filter-btn .en-mini{
+    font-family:var(--en-serif);font-style:italic;
+    color:var(--amber);font-size:10px;margin-right:8px;
+  }
+
+  .works{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line);
+  }
+  @media(max-width:900px){.works{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.works{grid-template-columns:1fr;}}
+
+  .card{
+    padding:32px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--bg);
+    transition:background .25s ease;
+    cursor:pointer;
+    display:flex;flex-direction:column;
+  }
+  .card:hover{background:var(--bg-alt);}
+  .card .head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:11px;letter-spacing:.15em;color:var(--ink-mute);
+    margin-bottom:16px;
+  }
+  .card .head .no{
+    font-family:var(--en-serif);font-style:italic;
+    color:var(--amber);font-size:14px;
+  }
+  .card .head .cat{text-transform:uppercase;font-weight:500;}
+  .card .thumb{
+    aspect-ratio:4/3;overflow:hidden;
+    background:var(--bg-warm);
+    margin-bottom:20px;border:1px solid var(--line-soft);
+  }
+  .card .thumb img{
+    width:100%;height:100%;object-fit:cover;object-position:top;
+    transition:transform .6s ease;filter:saturate(.95);
+  }
+  .card:hover .thumb img{transform:scale(1.04);}
+  .card h3{
+    font-family:var(--serif);font-weight:700;
+    font-size:18px;line-height:1.7;letter-spacing:.04em;
+    margin-bottom:12px;color:var(--ink);
+  }
+  .card p{
+    color:var(--ink-2);font-size:13px;line-height:1.95;
+    flex:1;
+  }
+  .card .meta{
+    margin-top:20px;padding-top:16px;
+    border-top:1px solid var(--line-soft);
+    font-size:11px;color:var(--ink-mute);letter-spacing:.1em;
+    display:flex;flex-wrap:wrap;gap:6px 12px;
+  }
+  .card .meta .tech::before{content:"#";color:var(--amber);margin-right:2px;}
+
+  /* ===== Skills ===== */
+  .skills{background:var(--bg-warm);border-top:1px solid var(--line);}
+  .skills-table{
+    background:var(--bg-alt);border:1px solid var(--line);
+    display:grid;grid-template-columns:repeat(2,1fr);
+  }
+  .skill-row{
+    display:grid;grid-template-columns:200px 1fr;
+    padding:20px 32px;
+    border-bottom:1px solid var(--line-soft);
+    border-right:1px solid var(--line-soft);
+    align-items:center;
+  }
+  .skill-row:nth-child(even){border-right:0;}
+  .skill-row .key{
+    font-family:var(--en-serif);font-style:italic;
+    color:var(--amber);font-size:13px;letter-spacing:.15em;
+  }
+  .skill-row .val{
+    font-family:var(--serif);font-weight:500;
+    font-size:14px;letter-spacing:.04em;
+  }
+  @media(max-width:700px){
+    .skills-table{grid-template-columns:1fr;}
+    .skill-row{border-right:0;}
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    background:var(--navy);
+    color:#e8e4d6;padding:80px 0 40px;
+  }
+  footer .grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:48px;}
+  footer h4{
+    font-family:var(--en-serif);font-style:italic;
+    color:var(--amber-soft);font-size:14px;letter-spacing:.2em;
+    margin-bottom:16px;
+  }
+  footer .brand-lg{
+    font-family:var(--serif);font-weight:700;
+    font-size:22px;letter-spacing:.05em;color:#fff;
+    margin-bottom:12px;
+  }
+  footer p{color:#c5c0b0;font-size:13px;line-height:1.9;}
+  footer .links{list-style:none;}
+  footer .links li{margin-bottom:8px;}
+  footer .links a{
+    color:#e8e4d6;text-decoration:none;
+    font-size:14px;letter-spacing:.05em;
+    transition:color .2s;
+    border-bottom:1px solid transparent;padding-bottom:2px;
+  }
+  footer .links a:hover{color:#fff;border-bottom-color:var(--amber);}
+  footer .copyright{
+    padding-top:32px;border-top:1px solid rgba(255,255,255,.1);
+    font-size:11px;letter-spacing:.15em;color:#9a9582;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  footer .copyright .en{color:var(--amber-soft);}
+
+  /* responsive */
+  @media(max-width:800px){
+    .hero .container{grid-template-columns:1fr;gap:48px;}
+    .about .grid{grid-template-columns:1fr;gap:32px;}
+    .about .side{border-right:0;border-bottom:1px solid var(--line);padding-right:0;padding-bottom:24px;}
+    footer .grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:640px){
+    nav ul{display:none;}
+    .container,.container-narrow{padding:0 24px;}
+    section{padding:72px 0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>Pharmacist · SMEC Candidate · AI Developer</span>
+    <span class="issue">No. 01 — Spring 2026</span>
+  </div>
+</div>
+
+<nav>
+  <div class="container">
+    <div class="brand">
+      <span class="en">Portfolio of</span>
+      Ima12332
+    </div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div>
+      <div class="meta">— Portfolio &nbsp;/&nbsp; 2026</div>
+      <h1>現場で得た知を、<br><span class="navy">AIで形にする。</span></h1>
+      <p class="lead">薬剤師として医療現場に立ち、中小企業診断士として経営を学び、AIで実装する。<br>三つの視点が重なる場所から、社会に役立つアウトプットを丁寧につくります。</p>
+      <div class="byline">
+        <strong>Ima12332</strong>　／　Pharmacist × SMEC Candidate × AI Developer
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="ctitle">— Mission</div>
+        <h3>「現場知 × ビジネス × AI」で、<br>独立薬剤師の挑戦を形にする。</h3>
+        <ul>
+          <li>2026年8月　中小企業診断士1次試験合格</li>
+          <li>2026年9月　コンテンツ事業立ち上げ</li>
+          <li>2030年　　三重県伊賀市にて在宅特化型薬局を開局</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="grid">
+      <div class="side">
+        <div class="num">— No. 01</div>
+        <h2>わたしについて<br><span class="en" style="font-size:14px;color:var(--ink-mute);display:block;margin-top:6px;">About the Author</span></h2>
+      </div>
+      <div class="body">
+        <p>薬剤師として年間1.6万枚の処方箋を実質1〜3名で処理する現場で経験を積み、在庫1,000万円を500万円へ圧縮するなど、限られたリソースの中で業務改善を続けてきました。管理薬剤師として累計2年10ヶ月、施設・個人の在宅医療にも対応した経験を持ちます。</p>
+        <div class="pull">「現場知 × ビジネス × AI」。<br>三つの軸が重なる場所こそ、これからの薬剤師が挑むべきフロンティアだと考えています。</div>
+        <p>現在は2026年8月の中小企業診断士1次試験合格を目標に学習を進めながら、Claude Code を中心とした AI 開発で診断士学習支援ツール・ランディングページ・ビジュアルコンテンツなどを制作しています。制作の流儀は対話的に組み上げる Vibe Coding。コンセプトから実装までを最短距離で形にします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="works" class="works-section">
+  <div class="container">
+    <div class="sec-head">
+      <span class="label">— No. 02 &nbsp; Selected Works</span>
+      <h2>制作実績</h2>
+      <p class="sub">AIを用いた多様なジャンルの制作物から、5点を厳選して掲載しています。</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all"><span class="en-mini">All</span>すべて</button>
+      <button class="filter-btn" data-filter="ai"><span class="en-mini">AI</span>学習ツール</button>
+      <button class="filter-btn" data-filter="game"><span class="en-mini">Game</span>ゲーム</button>
+      <button class="filter-btn" data-filter="lp"><span class="en-mini">LP</span>ランディング</button>
+      <button class="filter-btn" data-filter="creative"><span class="en-mini">Vis</span>ビジュアル</button>
+    </div>
+
+    <div class="works">
+
+      <article class="card" data-cat="ai">
+        <div class="head">
+          <span class="no">№ 01</span>
+          <span class="cat">AI Tool · 2026</span>
+        </div>
+        <div class="thumb"><img src="assets/works/work-01-bmao.png" alt="BMAO v3.0"></div>
+        <h3>BMAO v3.0<br>診断士学習支援AI</h3>
+        <p>中小企業診断士の問題演習を支援するAI。問題文を貼ると解説生成、図グラフ解析、信念状態の可視化までを一画面で完結させます。</p>
+        <div class="meta">
+          <span class="tech">Streamlit</span>
+          <span class="tech">Claude API</span>
+          <span class="tech">Python</span>
+        </div>
+      </article>
+
+      <article class="card" data-cat="game">
+        <div class="head">
+          <span class="no">№ 02</span>
+          <span class="cat">Game · 2026</span>
+        </div>
+        <div class="thumb"><img src="assets/works/work-02-tetris.png" alt="Neon Tetris"></div>
+        <h3>Neon Tetris</h3>
+        <p>ネオン調のテトリスゲーム。3段階の難易度設計とスコア倍率システムを実装し、遊びやすさを丁寧に調整しました。</p>
+        <div class="meta">
+          <span class="tech">HTML</span>
+          <span class="tech">CSS</span>
+          <span class="tech">JavaScript</span>
+        </div>
+      </article>
+
+      <article class="card" data-cat="lp">
+        <div class="head">
+          <span class="no">№ 03</span>
+          <span class="cat">Landing Page · 2026</span>
+        </div>
+        <div class="thumb"><img src="assets/works/work-03-shindanshi-lp.png" alt="経営の総合医"></div>
+        <h3>経営の総合医<br>診断士ランディングページ</h3>
+        <p>「日本経済を支える経営の総合医」をテーマに、診断士という職能の魅力と価値を伝えるランディングページ。</p>
+        <div class="meta">
+          <span class="tech">HTML/CSS</span>
+          <span class="tech">Copywriting</span>
+        </div>
+      </article>
+
+      <article class="card" data-cat="creative">
+        <div class="head">
+          <span class="no">№ 04</span>
+          <span class="cat">Visual · 2026</span>
+        </div>
+        <div class="thumb"><img src="assets/works/work-04-atelier.png" alt="魔法のアトリエ"></div>
+        <h3>魔法のアトリエ<br>AIキッズ教材</h3>
+        <p>子供たちに「AIと未来」をやさしく伝えるビジュアル教材。ユニコーンキャラを通してファンタジー世界を表現しました。</p>
+        <div class="meta">
+          <span class="tech">AI画像生成</span>
+          <span class="tech">Storytelling</span>
+        </div>
+      </article>
+
+      <article class="card" data-cat="creative">
+        <div class="head">
+          <span class="no">№ 05</span>
+          <span class="cat">Visual · 2026</span>
+        </div>
+        <div class="thumb"><img src="assets/works/work-05-kaizu.png" alt="経営の海図"></div>
+        <h3>嵐を乗り越える<br>成長への海図</h3>
+        <p>中小企業経営をテーマにしたビジュアルメタファー。手描き風イラストで「困難からの成長」をやさしく表現しました。</p>
+        <div class="meta">
+          <span class="tech">AI画像生成</span>
+          <span class="tech">Business Design</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skills">
+  <div class="container">
+    <div class="sec-head">
+      <span class="label">— No. 03 &nbsp; Skills & Tools</span>
+      <h2>使う道具</h2>
+      <p class="sub">日々の制作で実際に使っているツールと技術スタック。</p>
+    </div>
+    <div class="skills-table">
+      <div class="skill-row"><div class="key">AI Assistant</div><div class="val">Claude Code</div></div>
+      <div class="skill-row"><div class="key">AI Assistant</div><div class="val">ChatGPT · Gemini</div></div>
+      <div class="skill-row"><div class="key">Language</div><div class="val">Python</div></div>
+      <div class="skill-row"><div class="key">Language</div><div class="val">JavaScript</div></div>
+      <div class="skill-row"><div class="key">Framework</div><div class="val">Streamlit · Next.js</div></div>
+      <div class="skill-row"><div class="key">Markup</div><div class="val">HTML / CSS</div></div>
+      <div class="skill-row"><div class="key">Design</div><div class="val">AI画像生成 · Figma</div></div>
+      <div class="skill-row"><div class="key">Method</div><div class="val">Vibe Coding · Prompt Design</div></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <h4>— Contact</h4>
+        <div class="brand-lg">Ima12332</div>
+        <p>Pharmacist × SMEC Candidate × AI Developer<br>三重県在住</p>
+      </div>
+      <div>
+        <h4>— Channels</h4>
+        <ul class="links">
+          <li><a href="https://x.com/Ph_Shindanshi" target="_blank" rel="noopener">X　@Ph_Shindanshi</a></li>
+          <li><a href="#" target="_blank" rel="noopener">note　アイワイ＠独立希望薬剤師</a></li>
+          <li><a href="https://github.com/nowhigh2703" target="_blank" rel="noopener">GitHub　@nowhigh2703</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2026 Ima12332. All rights reserved.</span>
+      <span class="en">Portfolio No. 01 — Spring 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.card');
+  btns.forEach(b => b.addEventListener('click', () => {
+    btns.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const f = b.dataset.filter;
+    cards.forEach(c => {
+      c.style.display = (f === 'all' || c.dataset.cat === f) ? '' : 'none';
+    });
+  }));
+</script>
+
+</body>
+</html>
