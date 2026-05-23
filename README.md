@@ -7,7 +7,7 @@ AI学習支援ツール・ゲーム・ランディングページ・ビジュア
 
 ## 🌐 Live
 
-https://nowhigh2703.github.io/portfolio/
+[https://nowhigh2703.github.io/portfolio/](https://portfolio-shindanshi.vercel.app/)
 
 ## 🎨 Design
 
