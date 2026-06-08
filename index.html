@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ima12332 — Portfolio | 薬剤師 × 中小企業診断士 × AI開発</title>
-<meta name="description" content="薬剤師 × 中小企業診断士 × AI開発者 Ima12332 のポートフォリオ。Claude Code を中心とした Vibe Coding で、AI学習ツール・ゲーム・ランディングページ・ビジュアル教材まで多様な作品を制作。">
+<meta name="description" content="薬剤師 × 中小企業診断士 × AI開発者 Ima12332 のポートフォリオ。Claude Code を中心とした Vibe Coding で、AI学習支援ツール・OCR要約・図解生成・リサーチ支援・ゲーム・ランディングページ・ビジュアル教材まで、9つの作品を掲載。">
 <meta name="author" content="Ima12332">
 <meta name="theme-color" content="#1e3a5f">
 <meta property="og:type" content="website">
@@ -217,8 +217,49 @@
     margin:32px 0;
   }
 
+  /* ===== Featured (lead article) ===== */
+  .featured{background:var(--bg);}
+  .featured .grid{
+    display:grid;grid-template-columns:1.25fr 1fr;
+    gap:56px;align-items:center;
+  }
+  .featured .shot{
+    border:1px solid var(--line);
+    background:var(--bg-warm);
+    overflow:hidden;
+  }
+  .featured .shot img{
+    width:100%;display:block;
+    filter:saturate(.95);
+  }
+  .featured .lead-label{
+    font-family:var(--en-serif);font-style:italic;
+    color:var(--amber);font-size:14px;letter-spacing:.2em;
+    margin-bottom:14px;
+  }
+  .featured .no{
+    font-family:var(--en-serif);font-style:italic;
+    color:var(--ink-mute);font-size:13px;letter-spacing:.15em;
+    margin-bottom:18px;
+  }
+  .featured h3{
+    font-family:var(--serif);font-weight:700;
+    font-size:clamp(24px,2.6vw,30px);line-height:1.5;
+    letter-spacing:.05em;color:var(--ink);margin-bottom:22px;
+  }
+  .featured p{
+    color:var(--ink-2);font-size:15px;line-height:2.05;
+    margin-bottom:28px;
+  }
+  .featured .meta{
+    display:flex;flex-wrap:wrap;gap:8px 16px;
+    padding-top:20px;border-top:1px solid var(--line);
+    font-size:12px;color:var(--ink-mute);letter-spacing:.1em;
+  }
+  .featured .meta .tech::before{content:"#";color:var(--amber);margin-right:2px;}
+
   /* ===== Works ===== */
-  .works-section{background:var(--bg);}
+  .works-section{background:var(--bg-alt);border-top:1px solid var(--line);}
   .filters{
     display:flex;flex-wrap:wrap;gap:0;
     border-top:1px solid var(--line);border-bottom:1px solid var(--line);
@@ -242,7 +283,7 @@
 
   .works{
     display:grid;grid-template-columns:repeat(3,1fr);
-    border-top:1px solid var(--line);
+    border-top:1px solid var(--line);border-left:1px solid var(--line);
   }
   @media(max-width:900px){.works{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:600px){.works{grid-template-columns:1fr;}}
@@ -251,12 +292,11 @@
     padding:32px;
     border-right:1px solid var(--line);
     border-bottom:1px solid var(--line);
-    background:var(--bg);
+    background:var(--bg-alt);
     transition:background .25s ease;
-    cursor:pointer;
     display:flex;flex-direction:column;
   }
-  .card:hover{background:var(--bg-alt);}
+  .card:hover{background:var(--bg);}
   .card .head{
     display:flex;justify-content:space-between;align-items:baseline;
     font-size:11px;letter-spacing:.15em;color:var(--ink-mute);
@@ -359,12 +399,14 @@
     .hero .container{grid-template-columns:1fr;gap:48px;}
     .about .grid{grid-template-columns:1fr;gap:32px;}
     .about .side{border-right:0;border-bottom:1px solid var(--line);padding-right:0;padding-bottom:24px;}
+    .featured .grid{grid-template-columns:1fr;gap:32px;}
     footer .grid{grid-template-columns:1fr;}
   }
   @media(max-width:640px){
     nav ul{display:none;}
     .container,.container-narrow{padding:0 24px;}
     section{padding:72px 0;}
+    footer .copyright{flex-direction:column;gap:10px;align-items:flex-start;}
   }
 </style>
 </head>
@@ -385,6 +427,7 @@
     </div>
     <ul>
       <li><a href="#about">About</a></li>
+      <li><a href="#featured">Featured</a></li>
       <li><a href="#works">Works</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -409,7 +452,7 @@
         <ul>
           <li>2026年8月　中小企業診断士1次試験受験予定</li>
           <li>2026年9月　コンテンツ事業立ち上げ</li>
-          <li>2030年　　三重県にて在宅特化型薬局を開局予定</li>
+          <li>2030年　　在宅特化型薬局を開局予定</li>
         </ul>
       </div>
     </div>
@@ -432,20 +475,47 @@
   </div>
 </section>
 
+<section id="featured" class="featured">
+  <div class="container">
+    <div class="sec-head">
+      <span class="label">— No. 02 &nbsp; Featured Work</span>
+      <h2>本号の一作</h2>
+      <p class="sub">数ある制作物のなかから、いま最も力を注いでいる一点を取り上げます。</p>
+    </div>
+    <div class="grid">
+      <div class="shot">
+        <img src="assets/works/work-bmao.png" alt="BMAO v3.0 — 中小企業診断士 学習支援AI の画面">
+      </div>
+      <div class="text">
+        <div class="lead-label">— Lead Article</div>
+        <div class="no">№ 01 &nbsp; AI Tool · 2026</div>
+        <h3>BMAO v3.0<br>診断士学習を支えるAI</h3>
+        <p>問題文を貼り付けるだけで解説が返り、科目ごとに弱点を可視化する。図やグラフの読み込み、信念状態の確認までを一画面に収め、日々の演習に静かに寄り添う学習支援ツールです。自らの受験勉強のために設計し、使い込みながら細部を整え続けています。</p>
+        <div class="meta">
+          <span class="tech">Streamlit</span>
+          <span class="tech">Claude API</span>
+          <span class="tech">Python</span>
+          <span class="tech">Prompt Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="works" class="works-section">
   <div class="container">
     <div class="sec-head">
-      <span class="label">— No. 02 &nbsp; Selected Works</span>
+      <span class="label">— No. 03 &nbsp; Selected Works</span>
       <h2>制作実績</h2>
-      <p class="sub">AIを用いた多様なジャンルの制作物から、5点を厳選して掲載しています。</p>
+      <p class="sub">AIを用いた多様なジャンルの制作物から、9点を掲載しています。下のラベルで分野ごとに絞り込めます。</p>
     </div>
 
     <div class="filters">
       <button class="filter-btn active" data-filter="all"><span class="en-mini">All</span>すべて</button>
-      <button class="filter-btn" data-filter="ai"><span class="en-mini">AI</span>学習ツール</button>
+      <button class="filter-btn" data-filter="ai"><span class="en-mini">AI</span>学習・実務ツール</button>
       <button class="filter-btn" data-filter="game"><span class="en-mini">Game</span>ゲーム</button>
       <button class="filter-btn" data-filter="lp"><span class="en-mini">LP</span>ランディング</button>
-      <button class="filter-btn" data-filter="creative"><span class="en-mini">Vis</span>ビジュアル</button>
+      <button class="filter-btn" data-filter="visual"><span class="en-mini">Vis</span>ビジュアル</button>
     </div>
 
     <div class="works">
@@ -455,9 +525,9 @@
           <span class="no">№ 01</span>
           <span class="cat">AI Tool · 2026</span>
         </div>
-        <div class="thumb"><img src="assets/works/work-01-bmao.png" alt="BMAO v3.0"></div>
-        <h3>BMAO v3.0<br>診断士学習支援AI</h3>
-        <p>中小企業診断士の問題演習を支援するAI。問題文を貼ると解説生成、図グラフ解析、信念状態の可視化までを一画面で完結させます。</p>
+        <div class="thumb"><img src="assets/works/work-bmao.png" alt="BMAO v3.0 診断士学習支援AI"></div>
+        <h3>BMAO<br>診断士学習を支えるAI</h3>
+        <p>問題文を貼り付けるだけで解説が返り、科目ごとに弱点を可視化する。診断士の学びに寄り添う、設計の細やかな学習支援ツール。</p>
         <div class="meta">
           <span class="tech">Streamlit</span>
           <span class="tech">Claude API</span>
@@ -465,60 +535,123 @@
         </div>
       </article>
 
-      <article class="card" data-cat="game">
+      <article class="card" data-cat="ai">
         <div class="head">
           <span class="no">№ 02</span>
-          <span class="cat">Game · 2026</span>
+          <span class="cat">AI Tool · 2026</span>
         </div>
-        <div class="thumb"><img src="assets/works/work-02-tetris.png" alt="Neon Tetris"></div>
-        <h3>Neon Tetris</h3>
-        <p>ネオン調のテトリスゲーム。3段階の難易度設計とスコア倍率システムを実装し、遊びやすさを丁寧に調整しました。</p>
+        <div class="thumb"><img src="assets/works/work-grounding.png" alt="Gemini Grounding Assistant"></div>
+        <h3>Gemini Grounding<br>Assistant</h3>
+        <p>検索と連携し、Web上の最新の情報を出典とともに調べ、要約する。確かな根拠を添えることに重きを置いた、調査のための相棒。</p>
         <div class="meta">
-          <span class="tech">HTML</span>
-          <span class="tech">CSS</span>
+          <span class="tech">Gemini API</span>
+          <span class="tech">Google Search</span>
+          <span class="tech">Python</span>
+        </div>
+      </article>
+
+      <article class="card" data-cat="ai">
+        <div class="head">
+          <span class="no">№ 03</span>
+          <span class="cat">AI Tool · 2026</span>
+        </div>
+        <div class="thumb"><img src="assets/works/work-mermaid.png" alt="AI Mermaid スタジオ"></div>
+        <h3>AI Mermaid<br>スタジオ</h3>
+        <p>言葉で語ったプロセスを、整った図へと翻訳する。論理と戦略、二つの視点を選びながら、思考の流れを一枚の図解に収める。</p>
+        <div class="meta">
+          <span class="tech">Mermaid.js</span>
+          <span class="tech">Gemini API</span>
           <span class="tech">JavaScript</span>
+        </div>
+      </article>
+
+      <article class="card" data-cat="ai">
+        <div class="head">
+          <span class="no">№ 04</span>
+          <span class="cat">AI Tool · 2026</span>
+        </div>
+        <div class="thumb"><img src="assets/works/work-ocr.png" alt="画像テキスト抽出・要約ツール"></div>
+        <h3>画像テキスト<br>抽出・要約</h3>
+        <p>画像をひとつ預けると文字を読み取り、要点を静かに束ねて返す。手元の資料を、扱いやすい言葉へ写し替える小さな道具。</p>
+        <div class="meta">
+          <span class="tech">Gemini API</span>
+          <span class="tech">OCR</span>
+          <span class="tech">Python</span>
         </div>
       </article>
 
       <article class="card" data-cat="lp">
         <div class="head">
-          <span class="no">№ 03</span>
+          <span class="no">№ 05</span>
           <span class="cat">Landing Page · 2026</span>
         </div>
-        <div class="thumb"><img src="assets/works/work-03-shindanshi-lp.png" alt="経営の総合医"></div>
-        <h3>経営の総合医<br>診断士ランディングページ</h3>
-        <p>「日本経済を支える経営の総合医」をテーマに、診断士という職能の魅力と価値を伝えるランディングページ。</p>
+        <div class="thumb"><img src="assets/works/work-lp-shindanshi.png" alt="経営の総合医 診断士ランディングページ"></div>
+        <h3>経営の総合医<br>診断士を伝えるLP</h3>
+        <p>中小企業診断士という仕事の意味を、静かな言葉と余白で綴ったランディングページ。資格の魅力を、誇張せず丁寧に手渡す。</p>
         <div class="meta">
           <span class="tech">HTML/CSS</span>
-          <span class="tech">Copywriting</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">Web Design</span>
         </div>
       </article>
 
-      <article class="card" data-cat="creative">
+      <article class="card" data-cat="game">
         <div class="head">
-          <span class="no">№ 04</span>
+          <span class="no">№ 06</span>
+          <span class="cat">Game · 2026</span>
+        </div>
+        <div class="thumb"><img src="assets/works/work-tetris.png" alt="Neon Tetris"></div>
+        <h3>Neon Tetris</h3>
+        <p>ネオンの光をまとった、落ち物パズルの一作。三段階の難易度とスコア倍率を整え、手触りの心地よさを丁寧に調えた。</p>
+        <div class="meta">
+          <span class="tech">HTML/CSS</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">Canvas</span>
+        </div>
+      </article>
+
+      <article class="card" data-cat="game">
+        <div class="head">
+          <span class="no">№ 07</span>
+          <span class="cat">Game · 2026</span>
+        </div>
+        <div class="thumb"><img src="assets/works/work-puyo.png" alt="ぷよぷよ風パズルゲーム"></div>
+        <h3>ぷよぷよ風<br>パズル</h3>
+        <p>色を連ねて消していく、落ち物パズルの習作。素朴な操作画面に、遊びの呼吸とリズムを静かに織り込んでいる。</p>
+        <div class="meta">
+          <span class="tech">HTML/CSS</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">Canvas</span>
+        </div>
+      </article>
+
+      <article class="card" data-cat="visual">
+        <div class="head">
+          <span class="no">№ 08</span>
           <span class="cat">Visual · 2026</span>
         </div>
-        <div class="thumb"><img src="assets/works/work-04-atelier.png" alt="魔法のアトリエ"></div>
-        <h3>魔法のアトリエ<br>AIキッズ教材</h3>
-        <p>子供たちに「AIと未来」をやさしく伝えるビジュアル教材。ユニコーンキャラを通してファンタジー世界を表現しました。</p>
+        <div class="thumb"><img src="assets/works/work-atelier.png" alt="魔法のアトリエ AIキッズ教材"></div>
+        <h3>魔法のアトリエ<br>AIをやさしく</h3>
+        <p>AIと共にある未来を、子どもにやさしく語るビジュアル教材。ユニコーンの案内するファンタジー世界で、難しさを物語へとほどく。</p>
         <div class="meta">
           <span class="tech">AI画像生成</span>
-          <span class="tech">Storytelling</span>
+          <span class="tech">Prompt Design</span>
+          <span class="tech">Visual Design</span>
         </div>
       </article>
 
-      <article class="card" data-cat="creative">
+      <article class="card" data-cat="visual">
         <div class="head">
-          <span class="no">№ 05</span>
+          <span class="no">№ 09</span>
           <span class="cat">Visual · 2026</span>
         </div>
-        <div class="thumb"><img src="assets/works/work-05-kaizu.png" alt="経営の海図"></div>
+        <div class="thumb"><img src="assets/works/work-kaizu.png" alt="嵐を乗り越える 中小企業の成長への海図"></div>
         <h3>嵐を乗り越える<br>成長への海図</h3>
-        <p>中小企業経営をテーマにしたビジュアルメタファー。手描き風イラストで「困難からの成長」をやさしく表現しました。</p>
+        <p>中小企業の歩みを、舵輪と島影の手描き風メタファーで描く一枚。経営という航海を、静かな絵の比喩へと置き換えた。</p>
         <div class="meta">
           <span class="tech">AI画像生成</span>
-          <span class="tech">Business Design</span>
+          <span class="tech">Visual Design</span>
+          <span class="tech">Concept</span>
         </div>
       </article>
 
@@ -529,15 +662,15 @@
 <section id="skills" class="skills">
   <div class="container">
     <div class="sec-head">
-      <span class="label">— No. 03 &nbsp; Skills & Tools</span>
+      <span class="label">— No. 04 &nbsp; Skills & Tools</span>
       <h2>使う道具</h2>
       <p class="sub">日々の制作で実際に使っているツールと技術スタック。</p>
     </div>
     <div class="skills-table">
       <div class="skill-row"><div class="key">AI Assistant</div><div class="val">Claude Code</div></div>
       <div class="skill-row"><div class="key">AI Assistant</div><div class="val">ChatGPT · Gemini</div></div>
-      <div class="skill-row"><div class="key">Language</div><div class="val">Python</div></div>
-      <div class="skill-row"><div class="key">Language</div><div class="val">JavaScript</div></div>
+      <div class="skill-row"><div class="key">LLM API</div><div class="val">Claude API · Gemini API</div></div>
+      <div class="skill-row"><div class="key">Language</div><div class="val">Python · JavaScript</div></div>
       <div class="skill-row"><div class="key">Framework</div><div class="val">Streamlit · Next.js</div></div>
       <div class="skill-row"><div class="key">Markup</div><div class="val">HTML / CSS</div></div>
       <div class="skill-row"><div class="key">Design</div><div class="val">AI画像生成 · Figma</div></div>
@@ -565,14 +698,14 @@
     </div>
     <div class="copyright">
       <span>© 2026 Ima12332. All rights reserved.</span>
-      <span class="en">Portfolio No. 01 — Spring 2026</span>
+      <span class="en">Portfolio No. 01 — Spring 2026 · Built with AI</span>
     </div>
   </div>
 </footer>
 
 <script>
   const btns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.card');
+  const cards = document.querySelectorAll('.works .card');
   btns.forEach(b => b.addEventListener('click', () => {
     btns.forEach(x => x.classList.remove('active'));
     b.classList.add('active');

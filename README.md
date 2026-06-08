@@ -3,7 +3,8 @@
 薬剤師 × 中小企業診断士 × AI開発者 **Ima12332** のポートフォリオサイト。
 
 Claude Code を中心とした Vibe Coding で制作した作品をまとめています。
-AI学習支援ツール・ゲーム・ランディングページ・ビジュアルコンテンツなど多様なジャンルを掲載。
+AI学習支援ツール・OCR要約・図解生成・リサーチ支援・ゲーム・ランディングページ・ビジュアルコンテンツなど、
+多様なジャンルから全9点を掲載。
 
 ## 🌐 Live
 
@@ -26,15 +27,23 @@ AI学習支援ツール・ゲーム・ランディングページ・ビジュア
 portfolio-site/
 ├── index.html          # シングルページ
 ├── assets/
-│   └── works/          # 作品のサムネイル画像
-│       ├── work-01-bmao.png
-│       ├── work-02-tetris.png
-│       ├── work-03-shindanshi-lp.png
-│       ├── work-04-atelier.png
-│       └── work-05-kaizu.png
+│   └── works/          # 作品のスクリーンショット（全9点）
+│       ├── work-bmao.png          # 診断士学習支援AI（Featured）
+│       ├── work-grounding.png     # Gemini Grounding Assistant
+│       ├── work-mermaid.png       # AI Mermaid スタジオ
+│       ├── work-ocr.png           # 画像テキスト抽出・要約
+│       ├── work-lp-shindanshi.png # 経営の総合医 LP
+│       ├── work-tetris.png        # Neon Tetris
+│       ├── work-puyo.png          # ぷよぷよ風パズル
+│       ├── work-atelier.png       # 魔法のアトリエ
+│       └── work-kaizu.png         # 成長への海図
 ├── .nojekyll
 └── README.md
 ```
+
+### Sections
+
+`No.00 Hero` → `No.01 About` → `No.02 Featured Work` → `No.03 Selected Works（9点・絞り込み可）` → `No.04 Skills & Tools` → `No.05 Contact`
 
 ## 🛠 Tech
 
