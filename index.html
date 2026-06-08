@@ -11,7 +11,10 @@
 <meta property="og:title" content="Ima12332 — Portfolio">
 <meta property="og:description" content="薬剤師 × 中小企業診断士 × AI開発者のポートフォリオ。現場で得た知をAIで形にする。">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://nowhigh2703.github.io/portfolio/assets/hero/hero-illustration.webp">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nowhigh2703.github.io/portfolio/assets/hero/hero-illustration.webp">
+<link rel="preload" as="image" href="assets/hero/hero-illustration.webp">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e3a5f'/%3E%3Ctext x='50' y='62' font-family='serif' font-size='52' font-weight='700' text-anchor='middle' fill='%23b8956a'%3EI%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,8 +123,15 @@
   nav ul a:hover::after{transform:scaleX(1);}
 
   /* ===== Hero ===== */
-  .hero{padding:96px 0 80px;background:var(--bg);}
-  .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;}
+  .hero{
+    position:relative;
+    padding:96px 0 80px;
+    background:
+      linear-gradient(rgba(250,250,247,.84), rgba(250,250,247,.92)),
+      url("assets/hero/hero-bg.webp") center/cover no-repeat;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .hero .container{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;}
   .hero .meta{
     font-family:var(--en-serif);font-style:italic;
     color:var(--amber);font-size:13px;letter-spacing:.2em;
@@ -145,28 +155,52 @@
   }
   .hero .byline strong{color:var(--ink);font-weight:500;}
 
-  .hero-right{position:relative;}
-  .hero-card{
-    background:var(--bg-alt);
+  .hero-illust{
     border:1px solid var(--line);
-    padding:32px;
+    background:rgba(255,255,255,.55);
+    padding:10px;
   }
-  .hero-card .ctitle{
+  .hero-illust img{
+    width:100%;display:block;
+    filter:saturate(.95);
+  }
+  .hero-illust figcaption{
     font-family:var(--en-serif);font-style:italic;
-    color:var(--amber);font-size:13px;letter-spacing:.2em;
-    margin-bottom:16px;
+    color:var(--ink-mute);font-size:12px;letter-spacing:.12em;
+    text-align:right;padding:8px 4px 2px;
   }
-  .hero-card h3{
+
+  /* ===== Mission band ===== */
+  .mission-band{
+    background:var(--bg-warm);
+    border-bottom:1px solid var(--line);
+    padding:40px 0;
+  }
+  .mission-band .label{
+    font-family:var(--en-serif);font-style:italic;
+    color:var(--amber);font-size:13px;letter-spacing:.2em;margin-bottom:14px;
+  }
+  .mission-band .lead-line{
     font-family:var(--serif);font-weight:700;
-    font-size:18px;line-height:1.7;letter-spacing:.05em;
-    margin-bottom:20px;
+    font-size:clamp(18px,2vw,22px);line-height:1.6;letter-spacing:.05em;
+    color:var(--navy);margin-bottom:24px;
   }
-  .hero-card ul{list-style:none;font-size:13px;line-height:2;color:var(--ink-2);}
-  .hero-card ul li{
-    padding-left:20px;position:relative;
+  .mission-band ul{
+    list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    border-top:1px solid var(--line);
   }
-  .hero-card ul li::before{
-    content:"—";position:absolute;left:0;color:var(--amber);
+  .mission-band ul li{
+    padding:18px 24px 4px;font-size:13px;color:var(--ink-2);line-height:1.8;
+    border-right:1px solid var(--line-soft);
+  }
+  .mission-band ul li:last-child{border-right:0;}
+  .mission-band ul li .yr{
+    display:block;font-family:var(--en-serif);font-style:italic;
+    color:var(--amber);font-size:13px;letter-spacing:.12em;margin-bottom:4px;
+  }
+  @media(max-width:700px){
+    .mission-band ul{grid-template-columns:1fr;}
+    .mission-band ul li{border-right:0;border-bottom:1px solid var(--line-soft);padding-bottom:16px;}
   }
 
   /* ===== Section base ===== */
@@ -445,19 +479,24 @@
         <strong>Ima12332</strong>　／　Pharmacist × SMEC Candidate × AI Developer
       </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-card">
-        <div class="ctitle">— Mission</div>
-        <h3>「現場知 × ビジネス × AI」で、<br>独立薬剤師の挑戦を形にする。</h3>
-        <ul>
-          <li>2026年8月　中小企業診断士1次試験受験予定</li>
-          <li>2026年9月　コンテンツ事業立ち上げ</li>
-          <li>2030年　　在宅特化型薬局を開局予定</li>
-        </ul>
-      </div>
-    </div>
+    <figure class="hero-illust">
+      <img src="assets/hero/hero-illustration.webp" width="1100" height="904" alt="ポートフォリオのキービジュアル：タブレットを手にしたクリエイターと、創作を表す道具たちのイラスト" loading="eager">
+      <figcaption>— Key Visual</figcaption>
+    </figure>
   </div>
 </header>
+
+<section class="mission-band">
+  <div class="container">
+    <div class="label">— Mission</div>
+    <p class="lead-line">「現場知 × ビジネス × AI」で、独立薬剤師の挑戦を形にする。</p>
+    <ul>
+      <li><span class="yr">2026.08</span>中小企業診断士 1次試験 受験予定</li>
+      <li><span class="yr">2026.09</span>コンテンツ事業 立ち上げ</li>
+      <li><span class="yr">2030</span>在宅特化型薬局 開局予定</li>
+    </ul>
+  </div>
+</section>
 
 <section id="about" class="about">
   <div class="container">
