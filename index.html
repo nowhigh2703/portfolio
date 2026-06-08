@@ -125,13 +125,32 @@
   /* ===== Hero ===== */
   .hero{
     position:relative;
-    padding:96px 0 80px;
-    background:
-      linear-gradient(rgba(250,250,247,.84), rgba(250,250,247,.92)),
-      url("assets/hero/hero-bg.webp") center/cover no-repeat;
+    padding:112px 0 104px;
+    background:var(--bg);
     border-bottom:1px solid var(--line-soft);
+    overflow:hidden;
   }
-  .hero .container{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;}
+  /* generated key visual, slightly transparent, behind the title */
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:url("assets/hero/hero-illustration.webp") center center/cover no-repeat;
+    opacity:.3;
+    filter:saturate(.95);
+    pointer-events:none;
+  }
+  /* warm veil — stronger on the left so the left-aligned title stays legible */
+  .hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(100deg,
+      rgba(250,250,247,.90) 0%,
+      rgba(250,250,247,.72) 44%,
+      rgba(250,250,247,.32) 100%);
+    pointer-events:none;
+  }
+  .hero .container{position:relative;z-index:1;}
+  .hero-text{max-width:660px;}
   .hero .meta{
     font-family:var(--en-serif);font-style:italic;
     color:var(--amber);font-size:13px;letter-spacing:.2em;
@@ -154,21 +173,6 @@
     padding-top:24px;border-top:1px solid var(--line);
   }
   .hero .byline strong{color:var(--ink);font-weight:500;}
-
-  .hero-illust{
-    border:1px solid var(--line);
-    background:rgba(255,255,255,.55);
-    padding:10px;
-  }
-  .hero-illust img{
-    width:100%;display:block;
-    filter:saturate(.95);
-  }
-  .hero-illust figcaption{
-    font-family:var(--en-serif);font-style:italic;
-    color:var(--ink-mute);font-size:12px;letter-spacing:.12em;
-    text-align:right;padding:8px 4px 2px;
-  }
 
   /* ===== Mission band ===== */
   .mission-band{
@@ -471,7 +475,7 @@
 
 <header class="hero">
   <div class="container">
-    <div>
+    <div class="hero-text">
       <div class="meta">— Portfolio &nbsp;/&nbsp; 2026</div>
       <h1>現場で得た知を、<br><span class="navy">AIで形にする。</span></h1>
       <p class="lead">薬剤師として医療現場に立ち、中小企業診断士として経営を学び、AIで実装する。<br>三つの視点が重なる場所から、社会に役立つアウトプットを丁寧につくります。</p>
@@ -479,10 +483,6 @@
         <strong>Ima12332</strong>　／　Pharmacist × SMEC Candidate × AI Developer
       </div>
     </div>
-    <figure class="hero-illust">
-      <img src="assets/hero/hero-illustration.webp" width="1100" height="904" alt="ポートフォリオのキービジュアル：タブレットを手にしたクリエイターと、創作を表す道具たちのイラスト" loading="eager">
-      <figcaption>— Key Visual</figcaption>
-    </figure>
   </div>
 </header>
 
